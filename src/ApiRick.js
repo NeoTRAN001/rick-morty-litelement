@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import './GetData';
 import '@polymer/paper-card';
 
 export class ApiRick extends LitElement {
@@ -13,14 +14,10 @@ export class ApiRick extends LitElement {
 
     this.wiki = [];
 
-    fetch('https://rickandmortyapi.com/api/character/', { method: 'GET' })
-    .then((response) => {
-        if (response.ok) return response.json();
-        return Promise.reject(response);
-    })
-    .then((data) => { this._dataFormat(data); })
-    .catch((error) => { console.warn('Something went wrong.', error); });
-}
+    this.addEventListener('ApiData', (e) => { 
+      this._dataFormat(e.detail.data);
+    });
+  }
 
   _dataFormat(data) {
       let characters = [];
@@ -47,6 +44,7 @@ export class ApiRick extends LitElement {
 
   render() {
     return html`
+      <get-data url="https://rickandmortyapi.com/api/character/" method="GET"></get-data>
       ${this.wiki.map(character => html`
         <paper-card>
             <div class="card-content aToDo">
