@@ -1,0 +1,18 @@
+{
+  "name": "api-rick",
+  "version": "0.0.0",
+  "description": "Webcomponent api-rick following open-wc recommendations",
+  "author": "api-rick",
+  "license": "MIT",
+  "scripts": {
+    "start": "es-dev-server --app-index index.html --node-resolve --open --watch"
+  },
+  "dependencies": {
+    "@polymer/paper-card": "^3.0.1",
+    "lit-html": "^1.0.0",
+    "lit-element": "^2.0.1"
+  },
+  "devDependencies": {
+    "es-dev-server": "^1.5.0"
+  }
+}
