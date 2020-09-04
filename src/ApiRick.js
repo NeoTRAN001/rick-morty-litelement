@@ -39,6 +39,10 @@ export class ApiRick extends LitElement {
       :host {
         display: block;
       }
+
+      get-data {
+        display: none;
+      }
     `;
   }
 
